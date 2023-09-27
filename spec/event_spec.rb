@@ -121,7 +121,7 @@ RSpec.describe Event do
       @food_truck2.stock(@item4, 50)
       @food_truck2.stock(@item3, 25)
       @food_truck3.stock(@item1, 65)
-      
+
       expect(@event.total_inventory).to eq({
             @item1 => {
               quantity: 100,
@@ -140,6 +140,12 @@ RSpec.describe Event do
               food_trucks: [@food_truck2]
             },
           })
+    end
+  end
+
+  describe '#date' do
+    it 'returns the date the event was created' do
+      expect(@event.date).to eq("27/09/2023")
     end
   end
 end
